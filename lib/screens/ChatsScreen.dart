@@ -54,7 +54,7 @@ class ChatsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
+         
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +84,6 @@ class ChatsScreen extends StatelessWidget {
               SizedBox(
                 height: 110,
                 child: ListView.separated(
-                    shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return const ActivePersonItem();
@@ -99,9 +98,9 @@ class ChatsScreen extends StatelessWidget {
               SizedBox(
                 height: 500,
                 child: ListView.separated(
-                    physics: const AlwaysScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    // scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
                       return const MessageItems();
                     },
@@ -110,7 +109,7 @@ class ChatsScreen extends StatelessWidget {
                         height: 10,
                       );
                     },
-                    itemCount: 20),
+                    itemCount: 22),
               ),
             ],
           ),
