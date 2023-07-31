@@ -1,3 +1,4 @@
+import 'package:courses/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatefulWidget {
@@ -48,12 +49,12 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       keyboardType: widget.keyBoredType,
       obscureText: widget.isvisble,
       decoration: InputDecoration(
-        prefixIconColor: Colors.blueGrey,
+        prefixIconColor: KmainColor,
         prefixIcon: widget.prefixIcon,
         suffixIcon: widget.suffixIcon,
         hintText: widget.hintText,
         labelText: widget.labelText,
-        hintStyle: const TextStyle(color: Colors.blueGrey),
+        hintStyle: const TextStyle(color: KmainColor),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
       ),
       validator: (value) {

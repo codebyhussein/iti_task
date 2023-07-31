@@ -1,27 +1,29 @@
+import 'package:courses/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
+  CustomAppBar({super.key, required this.height, required this.title});
+  double height;
+  String title;
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 100,
+        height: height,
         width: double.infinity,
         decoration: const BoxDecoration(
-            color: Colors.blueGrey,
+            color: KmainColor,
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(25))),
-        child: const Column(
+        child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Center(
                 child: Text(
-              'Login Page',
-              style: TextStyle(
+              title,
+              style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 30,
+                  fontSize: 25,
                   color: Colors.white),
             )),
           ],

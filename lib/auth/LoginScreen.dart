@@ -33,7 +33,10 @@ class _Welcome_PageState extends State<Welcome_Page> {
         body: SingleChildScrollView(
       child: Column(
         children: [
-          const CustomAppBar(),
+          CustomAppBar(
+            height: 100,
+            title: 'Login Page',
+          ),
           const SizedBox(
             height: 30,
           ),
