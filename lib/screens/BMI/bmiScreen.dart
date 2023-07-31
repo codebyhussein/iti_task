@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:courses/screens/BMI/bmi_result.dart';
 import 'package:courses/widgets/CustomAppBar.dart';
+import 'package:courses/widgets/CustomButton.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -275,39 +276,23 @@ class _Bmi_Calculator_ScreenState extends State<Bmi_Calculator_Screen> {
           const SizedBox(
             height: 40,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Center(
-              child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.blueGrey,
-                  ),
-                  child: MaterialButton(
-                      onPressed: () {
-                        var result = weight / pow(sliderValue / 100, 2);
-                        Navigator.push(context, MaterialPageRoute(
-                          builder: (context) {
-                            return Bmi_result(
-                              age: age,
-                              weight: weight,
-                              height: sliderValue.round(),
-                              result: result.round(),
-                              isMale: isMale,
-                            );
-                          },
-                        ));
-                      },
-                      child: const Text(
-                        'Calulator',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18),
-                      ))),
-            ),
-          ),
+          CustomButton(
+              text: 'Calulator',
+              onpressed: () {
+                var result = weight / pow(sliderValue / 100, 2);
+
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return Bmi_result(
+                      age: age,
+                      weight: weight,
+                      height: sliderValue.round(),
+                      result: result.round(),
+                      isMale: isMale,
+                    );
+                  },
+                ));
+              })
         ],
       ),
     );
