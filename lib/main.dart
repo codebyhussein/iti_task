@@ -1,5 +1,6 @@
-import 'package:courses/views/BottomNavigatonBar/layoutScreen.dart';
 import 'package:flutter/material.dart';
+
+import 'API/screenData.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: mainScreen());
+        debugShowCheckedModeBanner: false, home: ScreenData());
   }
 }
