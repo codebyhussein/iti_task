@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'API/screenData.dart';
+import 'auth/LoginScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +13,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: ScreenData());
+        debugShowCheckedModeBanner: false, home: LoginScreen());
   }
 }

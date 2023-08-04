@@ -2,15 +2,17 @@ import 'package:courses/widgets/CustomAppBar.dart';
 import 'package:courses/widgets/CustomTextFormField.dart';
 import 'package:flutter/material.dart';
 
+import '../API/dio/dio_provider.dart';
+
 //  import 'buttons/lib/src/custom_button.dart';
-class Welcome_Page extends StatefulWidget {
-  const Welcome_Page({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<Welcome_Page> createState() => _Welcome_PageState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _Welcome_PageState extends State<Welcome_Page> {
+class _LoginScreenState extends State<LoginScreen> {
   bool isvesible = true;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -18,23 +20,11 @@ class _Welcome_PageState extends State<Welcome_Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   elevation: 0,
-        //   backgroundColor: Colors.blueGrey,
-        //   centerTitle: true,
-        // leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-        //   title: const Text('Login Page'),
-        // actions: [
-        //   IconButton(onPressed: () {}, icon: const Icon(Icons.camera_alt)),
-        //   IconButton(onPressed: () {}, icon: const Icon(Icons.search))
-        // ],
-        // ),
-
         body: SingleChildScrollView(
       child: Column(
         children: [
           CustomAppBar(
-            height: 100,
+            height: 90,
             title: 'Login Page',
           ),
           const SizedBox(
@@ -112,8 +102,12 @@ class _Welcome_PageState extends State<Welcome_Page> {
                           color: Colors.blueGrey,
                         ),
                         child: MaterialButton(
-                            onPressed: () {
-                              if (formKey.currentState!.validate()) {}
+                            onPressed: () async {
+                              if (formKey.currentState!.validate()) {
+                                await ApiServies().loginUser(
+                                    email: emailController.text,
+                                    password: passwordController.text);
+                              }
                             },
                             child: const Text(
                               'Login',
