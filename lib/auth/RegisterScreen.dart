@@ -1,18 +1,20 @@
-import 'package:courses/auth/RegisterScreen.dart';
+import 'package:courses/auth/LoginScreen.dart';
+import 'package:courses/constants.dart';
 import 'package:courses/widgets/CustomAppBar.dart';
 import 'package:courses/widgets/CustomTextFormField.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 //  import 'buttons/lib/src/custom_button.dart';
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   bool isvesible = true;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -25,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
         children: [
           CustomAppBar(
             height: 90,
-            title: 'Login Page',
+            title: 'Register Page',
           ),
           const SizedBox(
             height: 30,
@@ -42,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 60,
                   ),
                   const Text(
-                    'Login',
+                    'Register',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
@@ -104,12 +106,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: MaterialButton(
                             onPressed: () async {
                               if (formKey.currentState!.validate()) {
-                                // await ApiServies().loginUser(
-                                //     email: emailController.text,
-                                //     password: passwordController.text);
-
                                 await FirebaseAuth.instance
-                                    .signInWithEmailAndPassword(
+                                    .createUserWithEmailAndPassword(
                                         email: emailController.text,
                                         password: passwordController.text)
                                     .then((value) {
@@ -119,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               }
                             },
                             child: const Text(
-                              'Login',
+                              'Register',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -130,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(left: 60),
                     child: Row(
                       children: [
-                        const Text("Don't have an account ?"),
+                        const Text("I have an account ?"),
                         const SizedBox(
                           width: 10,
                         ),
@@ -138,12 +136,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(
                                 builder: (context) {
-                                  return const RegisterScreen();
+                                  return const LoginScreen();
                                 },
                               ));
                             },
                             child: const Text(
-                              "Register Now",
+                              "Login Now",
                               style: TextStyle(
                                   color: Colors.blueGrey,
                                   fontWeight: FontWeight.bold),

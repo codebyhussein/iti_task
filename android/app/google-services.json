@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "806716822443",
+    "project_id": "iti-task-632f8",
+    "storage_bucket": "iti-task-632f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806716822443:android:acc8b7b4aaf4b5ce0d38ee",
+        "android_client_info": {
+          "package_name": "com.example.courses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806716822443-etq48d49vkn6v5ilsli9s8us5jop8nvp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsM14Yqjp3N0qON9j_fcKY7OCH0DNN_aE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806716822443-etq48d49vkn6v5ilsli9s8us5jop8nvp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
